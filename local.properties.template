@@ -1,0 +1,6 @@
+## This file is a template for local.properties
+# Copy this file to local.properties and add your API key
+# Do not commit local.properties to version control
+
+sdk.dir=YOUR_SDK_PATH
+MAPS_API_KEY=YOUR_MAPS_API_KEY 

@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.nadeem.persistentbottomsheetpoc.R
 import com.nadeem.persistentbottomsheetpoc.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,7 +24,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Initialize your views and setup click listeners here
+        
+        binding.buttonExample.setOnClickListener {
+            findNavController().navigate(R.id.navigation_dashboard)
+        }
     }
 
     override fun onDestroyView() {

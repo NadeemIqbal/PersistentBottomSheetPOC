@@ -1,0 +1,24 @@
+android {
+    defaultConfig {
+        manifestPlaceholders = [MAPS_API_KEY: project.findProperty('MAPS_API_KEY') ?: ""]
+    }
+    
+    buildTypes {
+        release {
+        }
+    }
+}
+
+// Load local.properties file
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+// Add the API key to the project's ext properties
+ext {
+    MAPS_API_KEY = localProperties.getProperty('MAPS_API_KEY')
+} 
